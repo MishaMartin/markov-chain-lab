@@ -13,12 +13,14 @@ def open_and_read_file(file_path):
     info = open("green-eggs.txt", "r")
     info = info.readlines()
     info_stripped = []
+    
     for x in info:
         stripped = x.rstrip("\n")
         info_stripped.append(stripped)
-    
+    info_joined = " ".join(str(x) for x in info_stripped)
 
-    print(info_stripped)
+
+    print(info_joined)
 
     return 'Contents of your file as one long string'
 
