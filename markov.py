@@ -10,7 +10,7 @@ def open_and_read_file(file_path):
     the file's contents as one string of text.
     """
 
-    info = open("green-eggs.txt", "r")
+    info = open(file_path, "r")
     info = info.readlines()
     info_stripped = []
     
@@ -19,10 +19,7 @@ def open_and_read_file(file_path):
         info_stripped.append(stripped)
     info_joined = " ".join(str(x) for x in info_stripped)
 
-
-    print(info_joined)
-
-    return 'Contents of your file as one long string'
+    return info_joined
 
 
 def make_chains(text_string):
@@ -52,7 +49,18 @@ def make_chains(text_string):
 
     chains = {}
 
-    # your code goes here
+    words = text_string.split()
+    #setting a stop point
+    words.append(None)
+
+    for i in range(len(words) - 2):
+        key = (words[i], words[i+1])
+        value = words[i+2]
+
+        if key not in chains:
+            chains[key] = []
+        
+        chains[key].append(value)
 
     return chains
 
@@ -60,9 +68,15 @@ def make_chains(text_string):
 def make_text(chains):
     """Return text from chains."""
 
-    words = []
+    key = choice(list(chains.keys()))
+    words = [key[0], key[1]]
+    word = choice(chains[key])
 
-    # your code goes here
+    while word is not None:
+        key = (key[1], word)
+        words.append(word)
+        word = choice(chains[key])
+
 
     return ' '.join(words)
 
