@@ -164,4 +164,4 @@ This is a multi-lab exercise, go deep!
 ## Different Text
 We absolutely recommend you use the supplied green-eggs.txt while testing your program, because less text makes it easier to examine your data structures to see if they are working. Later however, it’s more fun to try out the program on a longer, more interesting corpus. We’ve also included gettysburg.txt for the Gettsyburg Address, or, if you’d prefer, you might try Project Gutenberg for some inspiration for your own ideas.
 
-## Congratulations on completing Markov Chains.
+### Congratulations on completing Markov Chains.
